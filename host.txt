@@ -1,0 +1,5 @@
+[servers]
+server1 ansible_host=95.163.236.58
+
+[local]
+local ansible_host=10.0.2.15

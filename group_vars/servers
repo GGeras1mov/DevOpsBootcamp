@@ -1,0 +1,6 @@
+---
+ansible_user                 : root 
+
+ansible_ssh_control_path_dir : /root/.ssh/id_rsa. 
+
+ansible_sudo_pass            : PRndMu3o3?%*

@@ -1,0 +1,22 @@
+---
+# tasks file for upgrade_os
+- name: Prevent python from being upgraded
+  ansible.builtin.dpkg_selections:
+    name: python
+    selection: hold
+
+- name: Update cache information
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Upgrade OS
+  ansible.builtin.apt:
+    upgrade: dist
+  notify: Reboot server  
+
+- name: Install byobu package
+  ansible.builtin.apt:
+    name: byobu
+    state: present
+- name: Remove old Kernels
+  command: purge-old-kernels
